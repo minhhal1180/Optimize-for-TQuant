@@ -151,7 +151,7 @@ Theoretical 3×; measured ~1.6× at N=16k (launch + combine overhead).
 Define for a set of scores $\{s_i\}$ and values $\{v_i\}$:
 
 $$
-m^* = \max_i s_i, \qquad \ell = \sum_i e^{s_i - m^*}, \qquad a = \sum_i e^{s_i - m^*} v_i
+m^* = \max_i s_i, \qquad \ell = \sum_i e^{s_i - m^{*}}, \qquad a = \sum_i e^{s_i - m^{*}} v_i
 $$
 
 Output: $\text{out} = a / \ell$.
