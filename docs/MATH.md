@@ -281,9 +281,3 @@ The observed speedup exceeds the linear product because of a non-linear bandwidt
 | `.cg` cache modifier | Cache hierarchy: V doesn't evict K from L1 |
 | Dynamic partial buffer | Continuous batching without allocation stalls |
 | fp32 accumulator | Numerical safety at long $N$ without atomic synchronization |
-
----
-
-## K. One-sentence summary
-
-> Parallel optimization moves TurboQuant decode from "memory-bound, serialized over $N$" ($T \sim B_{\text{base}} / \beta$, single SM swallows the whole context) to "memory-bound, parallelized over $(BH_{kv}, P)$ with compressed reads" ($T \sim B_{\text{TQ}} / (\beta \cdot \min(BH_{kv} P, S))$), exploiting the **associativity of log-sum-exp** and the **unbiasedness of the Algorithm-2 estimator** for correctness, yielding a multiplicative speedup $\rho_{\text{bw}} \cdot \rho_{\text{par}} \cdot \rho_{\text{TC}} \cdot \rho_{\text{cache}} \approx 17$–$27\times$ on long context with memory compression $\rho_{\text{mem}} \approx 14$–$53\times$.
