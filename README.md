@@ -2,7 +2,7 @@
 
 Optimized fork of TurboQuant KV-cache compression (ICLR 2026, [arXiv:2504.19874](https://arxiv.org/abs/2504.19874)).
 
-**Upstream:** [github.com/0xSero/turboquant](https://github.com/0xSero/turboquant) — original implementation. This fork keeps only the modules that were rewritten and adds the parallel-computation optimizations needed to make the hot-path Triton kernels actually used (in upstream they were defined but never wired into `score.py`).
+**Upstream:** [github.com/0xSero/turboquant](https://github.com/0xSero/turboquant) — original implementation. This fork keeps only the modules that were rewritten and adds the parallel-computation optimizations needed to make the hot-path Triton kernels actually used.
 
 This fork targets **single-GPU consumer hardware** (RTX 30/40/50 series) and applies five tagged optimizations: vectorized bit-unpack, Flash-Decoding split-K, GQA-aware kernels, runtime dispatcher, prefill quantize fusion, and Tensor-Core-enabled `tl.dot`.
 
@@ -196,7 +196,7 @@ See [docs/MATH.md](docs/MATH.md) for the cost-model derivation and roofline anal
 
 ---
 
-## Historical results from upstream (preserved for reference)
+## Historical results from upstream
 
 The numbers below are from the upstream multi-GPU vLLM benchmarks and are **not** affected by this fork's parallel-computation refactor. They give context for the original paper validation.
 
