@@ -151,10 +151,10 @@ Theoretical 3×; measured ~1.6× at N=16k (launch + combine overhead).
 Define for a set of scores $\{s_i\}$ and values $\{v_i\}$:
 
 $$
-m^* = \max_i s_i, \qquad \ell = \sum_i e^{s_i - m^{*}}, \qquad a = \sum_i e^{s_i - m^{*}} v_i
+m^{\ast} = \max_i s_i, \qquad \ell = \sum_i e^{s_i - m^{\ast}}, \qquad a = \sum_i e^{s_i - m^{\ast}} v_i
 $$
 
-Output: $\text{out} = a / \ell$.
+Output: $\text{out} = a \,/\, \ell$.
 
 ### Associativity (the key property for parallelism)
 
